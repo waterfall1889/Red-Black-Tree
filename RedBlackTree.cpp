@@ -461,3 +461,12 @@ std::string RedBlackTree::searchKey(uint64_t k) {
     }
     return n->value;
 }
+
+int RedBlackTree::treeSize(RedBlackTree::Node *r) const {
+    if(r == nullptr)return 0;
+    return (1+ treeSize(r->leftChild)+ treeSize(r->rightChild));
+}
+
+int RedBlackTree::getTreeSize() const {
+    return treeSize(root);
+}

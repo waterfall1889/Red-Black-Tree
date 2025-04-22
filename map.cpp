@@ -1,7 +1,3 @@
-//
-// Created by 30884 on 25-4-21.
-//
-
 #include "map.h"
 
 Map::Map() {
@@ -41,4 +37,11 @@ std::string Map::operator[](uint64_t k) {
     return s;
 }
 
+void Map::traverse() const {
+    if(isEmpty())return;
+    this->Storage.inOrderTraverse();
+}
 
+int Map::mapSize() const {
+    return this->Storage.getTreeSize();
+}

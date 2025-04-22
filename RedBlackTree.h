@@ -36,6 +36,8 @@ public:
     void postOrderTraverse() const;
     void levelOrderTraverse() const;
 
+    int getTreeSize()const;
+
 private:
     Node* root;
 
@@ -49,4 +51,5 @@ private:
     Node* successor(Node* node);
 
     void inOrderTraverseHelper(Node* node, std::vector<std::pair<uint64_t, std::string>>& data) const;
+    int treeSize(Node *r)const;
 };
